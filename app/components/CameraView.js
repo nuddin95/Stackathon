@@ -14,6 +14,7 @@ import styles from './Styles.js';
 import Camera from 'react-native-camera';
 import { connect } from 'react-redux';
 import { postPics } from '../store/pictures'
+import Gallery from './Gallery'
 import { Actions, Router, Scene } from 'react-native-router-flux';
 
 class CameraView extends Component{
@@ -43,6 +44,7 @@ class CameraView extends Component{
                         <Text style={styles.capture} onPress={this.props.takePicture.bind(this)}>[CAPTURE]</Text>
                     </Camera>
                 </View>) : false}
+                <Gallery />
             </View>
         )
     }
@@ -61,10 +63,8 @@ function mapDispatchToProps(dispatch){
             const options = {};
             this.camera.capture({metadata: options})
               .then((data) => {
-                  console.log("PROPS!!!!!", this.props)
-                  console.log("NOT THE DATA IM LOOKING FOR", data)
-                  console.log("BEFORE", Object.keys(this.props.pictures).length)  
-                  console.log("AFTER", Object.keys(this.props.pictures).length)
+                  console.log("NEW PICTURE", data)
+                  dispatch(postPics(data))
                 })
               .catch(err => console.error(err));
           }
