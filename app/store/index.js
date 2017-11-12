@@ -1,27 +1,18 @@
-import {
-    createStore,
-    applyMiddleware,
-    combineReducers
-    } from 'redux';
-import pictures from './pictures'
-import * as firebase from 'firebase';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import picReducer from './pictures'
+import { createLogger } from 'redux-logger';
+import thunkMiddleware from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const firebaseConfig ={
-  apiKey: "AIzaSyCa3bPLTfp84fXJ5zUBeI6fyvgyqfKfNYU",
-  authDomain: "stackathon-17f9d.firebaseapp.com",
-  databaseURL: "https://stackathon-17f9d.firebaseio.com",
-  projectId: "stackathon-17f9d",
-  storageBucket: ""
-}
-
-export const firebaseApp = firebase.initializeApp(firebaseConfig)
-
-const reducer = combineReducers({
-    pictures
+const rootReducer = combineReducers({
+    picReducer
 })
 
-const store = createStore(reducer)
-
-export default store;
-export * from './pictures';
+const store = createStore(rootReducer,
+    composeWithDevTools(applyMiddleware(
+    thunkMiddleware,
+    createLogger()
+  )))
+export default store
+export * from './pictures'
 

@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import {
@@ -12,17 +7,21 @@ import {
   View,
   AppRegistry
 } from 'react-native';
-import Home from './app/components/Home'
+import Home from './app/components/Home';
+import { Provider } from 'react-redux';
+import store from './app/store'
 import { Actions, Router, Scene } from 'react-native-router-flux';
 
 export default class app extends Component {
   render() {
     return (
-      <Router>
-        <Scene key="root">
-          <Scene key="home" component={ Home }/>
-        </Scene>
-      </Router>
+      <Provider store = {store}>
+        <Router>
+          <Scene key="root">
+            <Scene key="home" component={ Home } />
+          </Scene>
+        </Router>
+      </Provider>
     );
   }
 };

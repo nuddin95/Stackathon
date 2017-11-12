@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 import CameraView from './CameraView'
+import store, { getPics, fetchPics } from '../store'
+import { picturesRef } from '../store/pictures'
 
-export default class home extends Component{
+export default class Home extends Component{
+    
+    componentDidMount(){
+        const pictureThunk = fetchPics()
+        store.dispatch(pictureThunk)
+    }
+
     render(){
         return (
             <View>
@@ -12,4 +20,4 @@ export default class home extends Component{
     }
 }
 
-AppRegistry.registerComponent('home', () => home);
+AppRegistry.registerComponent('Home', () => Home);
