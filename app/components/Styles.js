@@ -32,6 +32,18 @@ const styles = StyleSheet.create({
         margin:1,
         borderRadius:5
     },
+    ImagePage:{
+        width:400,
+        height:400,
+        margin:1,
+        marginTop:7.5,
+        borderRadius:5,
+        justifyContent: 'space-between'
+    },
+    ImagePageContainer:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     SingleImagePressed:{
         width: 150, 
         height: 150,

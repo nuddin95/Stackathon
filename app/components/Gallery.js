@@ -30,10 +30,12 @@ function Gallery(props){
                         (
                             <View key={ind}>
                                 {console.log("SINGLE PICTURE", pic)}
-                                <Image
-                                    style={styles.SingleImage}
-                                    source={{uri:pic.path}}
-                                />
+                                <TouchableHighlight onPress={()=> Actions.SinglePic(pic)}>
+                                    <Image
+                                        style={styles.SingleImage}
+                                        source={{uri:pic.path}}
+                                    />
+                                </TouchableHighlight>
                             </View>
                         )
                     )

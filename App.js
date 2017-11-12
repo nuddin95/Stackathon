@@ -8,6 +8,7 @@ import {
   AppRegistry
 } from 'react-native';
 import Home from './app/components/Home';
+import SinglePic from './app/components/SinglePic'
 import { Provider } from 'react-redux';
 import store from './app/store'
 import { Actions, Router, Scene } from 'react-native-router-flux';
@@ -19,6 +20,7 @@ export default class app extends Component {
         <Router>
           <Scene key="root">
             <Scene key="home" component={ Home } />
+            <Scene key="SinglePic" component={SinglePic} />
           </Scene>
         </Router>
       </Provider>
