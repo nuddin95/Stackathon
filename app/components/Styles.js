@@ -49,6 +49,21 @@ const styles = StyleSheet.create({
         height: 150,
         margin:1,
         borderRadius:5
+    }, 
+    actionButtonIcon1: {
+        fontSize: 21,
+        height: 22,
+        color: 'black',
+      },
+    actionButtonIcon2: {
+        fontSize: 21,
+        height: 22,
+        color: 'black',
+    },
+    actionButtonIcon3: {
+        fontSize: 21,
+        height: 22,
+        color: 'red',
     }
   });
 

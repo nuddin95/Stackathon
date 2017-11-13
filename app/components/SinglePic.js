@@ -13,15 +13,21 @@ import {
 import styles from './Styles.js';
 import { connect } from 'react-redux';
 import { Actions, Router, Scene } from 'react-native-router-flux';
+import Fab from './Fab'
+
 
 function SinglePic (props){
+    console.ignoredYellowBox = [
+        'Setting a timer'
+    ];
     let singlePic = props.navigation.state.params
     return (
-        <View>
-            {console.log("THESE ARE PROPS IN SINGLE PICS", singlePic)}
+        <View style={{flex:1, backgroundColor: '#f3f3f3'}}>
+
             <View style={styles.ImagePageContainer}>
                 <Image source={{uri:singlePic.path}} style={styles.ImagePage} />
             </View>
+            <Fab />
         </View>
     )
 }

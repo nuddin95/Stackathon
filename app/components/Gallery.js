@@ -29,7 +29,6 @@ function Gallery(props){
                     pics.map((pic, ind) => 
                         (
                             <View key={ind}>
-                                {console.log("SINGLE PICTURE", pic)}
                                 <TouchableHighlight onPress={()=> Actions.SinglePic(pic)}>
                                     <Image
                                         style={styles.SingleImage}

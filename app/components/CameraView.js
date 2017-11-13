@@ -30,7 +30,7 @@ class CameraView extends Component{
                 <Button
                     onPress={() =>this.setState({cameraSwitch:!(this.state.cameraSwitch)}) }
                     title="Camera"
-                    color="#841584"
+                    color="#000000"
                     accessibilityLabel="Button to turn on and off the camera"
                 />
 
@@ -66,7 +66,9 @@ function mapDispatchToProps(dispatch){
                   console.log("NEW PICTURE", data)
                   dispatch(postPics(data))
                 })
+              .then(()=> this.setState({cameraSwitch:!(this.state.cameraSwitch)}))  
               .catch(err => console.error(err));
+            
           }
     }
 }
