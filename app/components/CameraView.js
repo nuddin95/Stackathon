@@ -25,7 +25,6 @@ class CameraView extends Component{
         this.state={
             cameraSwitch:false
     }
-
     const Blob = RNFetchBlob.polyfill.Blob
     const fs = RNFetchBlob.fs
     window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
@@ -103,6 +102,7 @@ function mapDispatchToProps(dispatch){
                   })
                   .then(url => {
                     resolve(url);
+                    return url
                   })
                   .catch(error => {
                     reject(error)
