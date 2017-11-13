@@ -14,6 +14,7 @@ import styles from './Styles.js';
 import { connect } from 'react-redux';
 import { Actions, Router, Scene } from 'react-native-router-flux';
 import Fab from './Fab'
+import { firebaseApp } from '../store/pictures';
 
 
 function SinglePic (props){
@@ -21,6 +22,8 @@ function SinglePic (props){
         'Setting a timer'
     ];
     let singlePic = props.navigation.state.params
+    let imageRef = firebaseApp.storage().ref(`IMAGE/${singlePic.path}`);
+    console.log("*****IMAGEREF*****", imageRef)
     return (
         <View style={{flex:1, backgroundColor: '#f3f3f3'}}>
 

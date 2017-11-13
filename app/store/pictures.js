@@ -7,7 +7,7 @@ const firebaseConfig = {
     projectId: "stackathon-17f9d",
     storageBucket: "stackathon-17f9d.appspot.com"
 }
-const firebaseApp = firebase.initializeApp(firebaseConfig)
+export const firebaseApp = firebase.initializeApp(firebaseConfig)
 export const picturesRef = firebaseApp.database().ref().child('Pictures')
 
 //ACTION TYPES
