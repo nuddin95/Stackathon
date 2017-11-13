@@ -19,7 +19,7 @@ export default class app extends Component {
       <Provider store = {store}>
         <Router>
           <Scene key="root">
-            <Scene key="home" component={ Home } />
+            <Scene key="home" component={ Home } title="Smart Gallery"/>
             <Scene key="SinglePic" component={SinglePic} />
           </Scene>
         </Router>

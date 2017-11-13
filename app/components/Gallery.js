@@ -22,8 +22,6 @@ function Gallery(props){
     console.log("THESE ARE ALL THE PICS",pics)
     return (
         <ScrollView>
-            <Text>{pics.length}</Text>
-            <Text>GALLERY</Text>
             <View style = {styles.allImages}>
                 {
                     pics.map((pic, ind) => 
