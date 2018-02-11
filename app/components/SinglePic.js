@@ -15,9 +15,9 @@ import { connect } from 'react-redux';
 import { Actions, Router, Scene } from 'react-native-router-flux';
 import Fab from './Fab'
 import { firebaseApp } from '../store/pictures';
-
+let key = require('../../visionKey')
 import vision from "react-cloud-vision-api";
-vision.init({ auth: "AIzaSyD8Mkq4bTZbGsPARLT2U5NMSyRBlQgXTi8" })
+vision.init({ auth:  key})//create visionKey.js file and default export your key as a string
 let request;
 
 class SinglePic extends Component{

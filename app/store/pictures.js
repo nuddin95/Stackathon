@@ -1,12 +1,7 @@
 import firebase from 'firebase';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCa3bPLTfp84fXJ5zUBeI6fyvgyqfKfNYU",
-    authDomain: "stackathon-17f9d.firebaseapp.com",
-    databaseURL: "https://stackathon-17f9d.firebaseio.com",
-    projectId: "stackathon-17f9d",
-    storageBucket: "stackathon-17f9d.appspot.com"
-}
+
+const firebaseConfig = require('../../firbaseconfig') //CREATE YOUR FIREBASE CONFIG FILE AND EXPORT THE CONFIG OBJECT
 export const firebaseApp = firebase.initializeApp(firebaseConfig)
 export const picturesRef = firebaseApp.database().ref().child('Pictures')
 
